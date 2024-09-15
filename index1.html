@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中秋快乐</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: #1f3856;
+            /* background: #0a1f3c; */
+            overflow: hidden;
+        }
+
+        .img {
+            position: absolute;
+        }
+
+        .box {
+            width: 1000px;
+            height: 600px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            backdrop-filter: blur(2px);
+            z-index: 9;
+            overflow: hidden;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 10px 10px 100px #f8d547d5;
+
+        }
+
+        .yuan {
+            position: absolute;
+            width: 1500px;
+            height: 1500px;
+            /* background: url("./i.png") no-repeat; */
+            background-size: 100% 100%;
+            border-radius: 50%;
+            top: -734px;
+            left: -1039px;
+            transition: all 1.2s ease-in-out;
+            z-index: 9;
+            font-size: 1320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yuan1 {
+            position: absolute;
+            background-size: 100% 100%;
+            border-radius: 50%;
+            top: 50%;
+            left: 30%;
+            transition: all 1.2s ease-in-out;
+            z-index: 9;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .ta1 {
+            position: absolute;
+            width: 210px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 1s ease-in-out 0.5s;
+            z-index: 10;
+            font-size: 30px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .t1 {
+            top: 40px;
+            left: 90px;
+        }
+
+        .ta_1 {
+            color: #1f3856;
+            border-radius: 30px;
+            border: 1px solid #1f3856;
+            font-size: 18px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 0;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            z-index: 10;
+            transition: all 0.2s linear;
+            letter-spacing: 4px;
+        }
+
+        .ta_1:hover {
+            color: #fff;
+            background: #1f3856;
+        }
+
+        .t2 {
+            top: 40px;
+            right: -300px;
+        }
+
+        p:first-letter {
+            font-size: 160%;
+            float: left;
+            margin-right: 10px;
+            line-height: 1.2;
+            color: #f60;
+            text-shadow: 10px 10px 20px #FF6600;
+
+        }
+
+        .img1 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: url('./ii.png') no-repeat;
+            background-size: 100% 100%;
+            border-radius: 50%;
+            top: 220px;
+            left: 30px;
+            transition: all 1s ease-in-out 0.8s;
+            z-index: 10;
+        }
+
+        .img2 {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            background: url('./iii.png') no-repeat;
+            background-size: 100% 100%;
+            border-radius: 50%;
+            top: 100px;
+            right: -500px;
+            transition: all 1s ease-in-out 0.8s;
+            z-index: 10;
+        }
+
+        .cont1 {
+            position: absolute;
+            width: 352px;
+            text-align: justify;
+            right: 10%;
+            top: 50%;
+            color: #fff;
+            font-size: 24px;
+            transform: translate(0, -50%);
+            z-index: 8;
+            transition: all 1s ease-in-out 0.7s;
+            line-height: 36px;
+        }
+
+        .cont2 {
+            position: absolute;
+            width: 360px;
+            left: -400px;
+            top: 50%;
+            color: #fff;
+            font-size: 24px;
+            transform: translate(0, -50%);
+            z-index: 8;
+            transition: all 1s ease-in-out 0.5s;
+        }
+
+        #footer2 {
+                height: 40px;
+                line-height: 40px;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                background: #333;
+                color: #fff;
+                font-family: Arial;
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+
+        .cont2 p {
+            padding: 20px 0;
+        }
+
+        p:nth-child(2) {
+            padding-left: 20px;
+        }
+
+        p:nth-child(3) {
+            padding-left: 40px;
+        }
+
+        p:nth-child(4) {
+            padding-left: 60px;
+        }
+
+        .tomove {
+            top: -534px;
+            left: 461px;
+        }
+
+        .tomove1 {
+            left: -248px;
+        }
+
+        .tomove2 {
+            right: 10%;
+        }
+
+        .tomove3 {
+            left: -500px;
+            top: 400px;
+        }
+
+        .tomove4 {
+            top: 300px;
+            right: 50px;
+        }
+
+        .tomove5 {
+            right: -360px;
+        }
+
+        .tomove6 {
+            left: 10%;
+        }
+
+        .tomove7 {
+            top: -734px;
+        }
+
+        .tomove8 {
+            top: 30%;
+            left: 56%;
+            font-size: 320px;
+            opacity: 1;
+        }
+
+        .tomove9 {
+            top: -1000px;
+            left: 60%;
+            font-size: 820px;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="star.svg" class="img">
+    <div class="yuan1">🌕</div>
+    <div class="box">
+        <div class="yuan">🌕</div>
+        <div class="ta1 t1">
+            <div>于晨轩同学<br>中秋节快乐！</div>
+            <div class="ta_1" onclick="ckick1()">Button</div>
+        </div>
+        <div class="img1"></div>
+        <div class="cont1">
+            <span>
+                “ 举头望明月，低头思故乡。 ”
+                LabelText1内容
+            </span>
+        </div>
+        <div class="ta1 t2">
+            <div>LabelText2内容</div>
+            <div class="ta_1" onclick="ckick2()">Button2</div>
+        </div>
+        <div class="img2"></div>
+        <div class="cont2">
+            <p>中天明月照人间，</p>
+            <p>秋意浓浓喜气添。</p>
+            <p>快马加鞭奔前程，</p>
+            <p>乐享团圆共婵娟。</p>
+        </div>
+       <div id="footer2">本网页的诞生离不开Gitee用户hkxiao-li的仓库·© 2024 LazyHan. All rights reserved.</div>
+    </div>
+</body>
+<script>
+    $().ready(function () {
+        var img = $("img");
+        var arr = new Array();
+        function starInit() {
+            for (let num = 1; num <= 166; num++) {
+                var starX = parseInt(Math.random() * 1920);
+                var starY = parseInt(Math.random() * 1080);
+                var starR = parseInt(Math.random() * 16 + 10);
+                var cloneImg = img.clone();
+                cloneImg.css({ "bottom": starY });
+                cloneImg.css({ "right": starX });
+                cloneImg.css({ "width": starR });
+                arr[num] = cloneImg;
+                $("body").append(cloneImg);
+            }
+            img.css("right", parseInt(Math.random() * 1920));
+            img.css("top", parseInt(Math.random() * 400));
+            arr.push(img);
+        }
+        function flash() {
+            var start = parseInt(Math.random() * 50 + 1);
+            var end = parseInt(Math.random() * arr.length);
+            var temp = null;
+            if (start > end) {
+                temp = start;
+                start = end;
+                end = temp;
+            }
+            for (var i = start; i <= end; i++) {
+                var func = (function () {
+                    var index = i;
+                    var interval = parseInt(Math.random() * 500 + 500);
+                    return function () {
+                        if (arr[index]) {
+
+                            arr[index].toggle(interval);
+                        }
+                    };
+                })();
+                func();
+            }
+        }
+        starInit();
+        setInterval(flash, 40);
+    });
+    function ckick1() {
+        $(".yuan").addClass('tomove')
+        $(".t1").addClass('tomove1')
+        $(".t2").addClass('tomove2')
+        $(".img1").addClass('tomove3')
+        $(".img2").addClass('tomove4')
+        $(".cont1").addClass('tomove5')
+        $(".cont2").addClass('tomove6')
+        setTimeout(() => {
+            $(".yuan").addClass('tomove7')
+            $(".yuan1").addClass('tomove9')
+        }, 1000)
+        $(".yuan1").addClass('tomove8')
+    }
+    function ckick2() {
+        $(".yuan").removeClass('tomove')
+        $(".yuan").removeClass('tomove7')
+        $(".t1").removeClass('tomove1')
+        $(".t2").removeClass('tomove2')
+        $(".img1").removeClass('tomove3')
+        $(".img2").removeClass('tomove4')
+        $(".cont1").removeClass('tomove5')
+        $(".cont2").removeClass('tomove6')
+        $(".yuan1").removeClass('tomove9')
+        setTimeout(() => {
+            $(".yuan1").removeClass('tomove8')
+        }, 100)
+    }
+</script>
+
+</html>
