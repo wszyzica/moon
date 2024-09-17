@@ -3,17 +3,9 @@
 <html lang="en">
 
 <head>
-<script>
-$(document).one('WeixinJSBridgeReady', function () {
-    var audio = document.getElementById("audio");
-    audio.play(); //执行一次
-    audio.setAttribute('src', 'https://wszyzica.github.io/moon/bgm.mp3'); // 替换src
-    audio.load();
-})
-// 监听摇晃事件简化版
-window.addEventListener('devicemotion', function () {
-    document.getElementById("audio").play(); // 成功播放
-}, false);
+<audio autoplay loop>
+        <source src="https://wszyzica.github.io/moon/bgm.mp3" type="audio/mpeg">
+    </audio>
     <meta charset="UTF-8">
     <title>中秋快乐</title>
 <script type="text/javascript">
