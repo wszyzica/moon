@@ -3,11 +3,31 @@
 <html lang="en">
 
 <head>
-<audio autoplay="autopaly" loop="loop" controls="controls" id="audios">
-    <source src="/moon/bgm.mp3" type="audio/mp3" />
-</audio>
+$(document).one('WeixinJSBridgeReady', function () {
+    var audio = document.getElementById("audio");
+    audio.play(); //执行一次
+    audio.setAttribute('src', '/moon/bgm.mp3'); // 替换src
+    audio.load();
+})
+// 监听摇晃事件简化版
+window.addEventListener('devicemotion', function () {
+    document.getElementById("audio").play(); // 成功播放
+}, false);
     <meta charset="UTF-8">
     <title>中秋快乐</title>
+<script type="text/javascript">
+    window.onload = function(){
+             setInterval("toggleSound()",1);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("music");//获取ID  
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
+</script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style type="text/css">
         * {
